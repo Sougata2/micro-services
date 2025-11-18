@@ -1,4 +1,4 @@
-package com.example.demo.crypto;
+package com.example.gateway.crypto;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;

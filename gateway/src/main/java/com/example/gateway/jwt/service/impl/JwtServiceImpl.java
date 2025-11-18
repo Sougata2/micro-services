@@ -1,7 +1,7 @@
-package com.example.demo.jwt.service.impl;
+package com.example.gateway.jwt.service.impl;
 
-import com.example.demo.jwt.JwtProperties;
-import com.example.demo.jwt.service.JwtService;
+import com.example.gateway.jwt.JwtProperties;
+import com.example.gateway.jwt.service.JwtService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;

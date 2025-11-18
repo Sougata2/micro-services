@@ -1,7 +1,7 @@
-package com.example.demo.errors;
+package com.example.gateway.errors;
 
-import com.example.demo.errors.dto.ErrorDto;
-import com.example.demo.errors.exceptions.UnAuthorizedAccessException;
+import com.example.gateway.errors.dto.ErrorDto;
+import com.example.gateway.errors.exceptions.UnAuthorizedAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.server.reactive.ServerHttpRequest;

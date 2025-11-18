@@ -1,4 +1,4 @@
-package com.example.demo.errors.exceptions;
+package com.example.gateway.errors.exceptions;
 
 
 public class UnAuthorizedAccessException extends RuntimeException {

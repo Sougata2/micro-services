@@ -1,7 +1,6 @@
-package com.example.demo.jwt;
+package com.example.gateway.jwt;
 
-import com.example.demo.errors.exceptions.UnAuthorizedAccessException;
-import com.example.demo.jwt.service.JwtService;
+import com.example.gateway.errors.exceptions.UnAuthorizedAccessException;
 import lombok.RequiredArgsConstructor;
 import org.apache.http.HttpHeaders;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
@@ -15,7 +14,6 @@ import reactor.core.publisher.Mono;
 @Configuration
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
-    private final JwtService jwtService;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {

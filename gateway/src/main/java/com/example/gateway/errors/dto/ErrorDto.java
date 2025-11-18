@@ -1,4 +1,4 @@
-package com.example.demo.errors.dto;
+package com.example.gateway.errors.dto;
 
 import lombok.*;
 import org.springframework.http.HttpStatus;
