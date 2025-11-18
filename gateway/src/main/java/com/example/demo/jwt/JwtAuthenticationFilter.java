@@ -1,6 +1,7 @@
 package com.example.demo.jwt;
 
 import com.example.demo.errors.exceptions.UnAuthorizedAccessException;
+import com.example.demo.jwt.service.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.apache.http.HttpHeaders;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
@@ -14,29 +15,30 @@ import reactor.core.publisher.Mono;
 @Configuration
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
+    private final JwtService jwtService;
+
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
 
         // skip authentication for these paths
-        if (request.getURI().getPath().contains("/auth")){
+        if (request.getURI().getPath().contains("/auth")) {
             return chain.filter(exchange);
         }
 
         // check for Auth headers
-        if (!request.getHeaders().containsKey(HttpHeaders.AUTHORIZATION)){
+        if (!request.getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {
             throw new UnAuthorizedAccessException("Authorization Headers are missing");
         }
 
         String authHeader = request.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
-        if (authHeader == null || !authHeader.startsWith("Bearer ")){
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             throw new UnAuthorizedAccessException("Bearer Token is missing");
         }
 
         String token = authHeader.substring(7);
         try {
-            // validate the token here.
-            System.out.println("validating token");
+//            System.out.println("Token Validated : " + jwtService.validateToken(token));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
