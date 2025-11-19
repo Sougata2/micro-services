@@ -1,4 +1,4 @@
-package com.example.demo.catalogue.controller;
+package com.example.product.catalogue.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

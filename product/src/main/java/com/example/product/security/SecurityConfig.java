@@ -1,4 +1,4 @@
-package com.example.demo.security;
+package com.example.product.security;
 
 import com.domain.authCommon.filter.AuthFilter;
 import lombok.RequiredArgsConstructor;
